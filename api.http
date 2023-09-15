@@ -1,0 +1,37 @@
+### Recuperar todas las películas
+GET http://localhost:8080/movies
+
+### Recuperar una película por id
+GET http://localhost:8080/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+
+### Recuperar una película por id
+GET http://localhost:8080/movies?genre=drama
+
+### Crear una película
+POST http://localhost:8080/movies
+Content-Type: application/json
+
+{
+    "title": "Back to the future",
+    "year": 1985,
+    "director": "Robert Zemeckis",
+    "duration": 114,
+    "poster": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR80666e4S2B6AgopyUP0aybHhpFGBNbWf8oYtNWlm0rQ_tf8gd",
+    "genre": ["Adventure", "Sci-Fi"],
+    "rate": 40
+
+}
+
+### Actualizar una película
+PATCH http://localhost:8080/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "year": 1920
+
+}
+
+### Eliminar una película
+DELETE  http://localhost:8080/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
