@@ -15,8 +15,7 @@ app.use(
       const ACCEPTED_ORIGINS = [
         'http://localhost:8080',
         'http://localhost:1234',
-        'https://movies.com',
-        'https://midu.dev'
+        'https://movies.com'
       ]
 
       if (ACCEPTED_ORIGINS.includes(origin)) {
@@ -40,9 +39,14 @@ app.get('/', (req, res) => {
     routes: {
       movies: '/movies',
       movieById: '/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3',
-      movieByGenre: '/movies?genre=sci-fi'
+      movieByGenre: '/movies?genre=sci-fi',
+      exampleApiRest: '/index.html'
     }
   })
+})
+
+app.get('/index.html', (req, res) => {
+  res.sendFile(__dirname + '/web/index.html')
 })
 
 app.get('/movies', (req, res) => {
